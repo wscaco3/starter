@@ -1,6 +1,5 @@
 package com.arksh.config;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.*;
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -13,7 +12,6 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.io.Serializable;
-import java.util.stream.Stream;
 
 @Configuration
 @EnableCaching
@@ -38,13 +36,13 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
 		return template;
 	}
 
-    @Bean
-    public KeyGenerator keyGenerator() {
-        return (target, method, params)->{
-            StringBuilder sb = new StringBuilder(Constants.CACHE_NAMESPACE);
-            sb.append(target.getClass().getSimpleName());
-            Stream.of(params).forEach(sb.append("_")::append);
-            return sb.toString();
-        };
-    }
+//    @Bean
+//    public KeyGenerator keyGenerator() {
+//        return (target, method, params)->{
+//            StringBuilder sb = new StringBuilder(Constants.CACHE_NAMESPACE);
+//            sb.append(target.getClass().getSimpleName());
+//            Stream.of(params).forEach(sb.append("_")::append);
+//            return sb.toString();
+//        };
+//    }
 }

@@ -8,9 +8,5 @@ spring:
     password: 1234
     hikari:
           idle-timeout: 10000
-  jpa:
-    hibernate:
-      ddlAuto: update
-    showSql: true
   jackson:
     serialization: true
