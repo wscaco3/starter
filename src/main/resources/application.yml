@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/starter?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 1234
+    hikari:
+          idle-timeout: 10000
+  jpa:
+    hibernate:
+      ddlAuto: update
+    showSql: true
+  jackson:
+    serialization: true
